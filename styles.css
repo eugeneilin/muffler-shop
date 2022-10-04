@@ -1,0 +1,177 @@
+/* ----- Imports ----- */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+/* ----- Resets ----- */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+/* ----- Variables ----- */
+:root {
+  --primary: #fc4849;
+  --secondary: #36404b;
+  --light: #f2f2f2;
+  --dark: #333333;
+  --radius: 8px;
+}
+
+/* ----- General ----- */
+
+html,
+body {
+  background-color: white;
+  line-height: 1.6;
+  color: var(--dark);
+  min-height: 100%;
+  font-size: 16px;
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+
+section {
+  height: 100vh;
+  color: var(--secondary);
+}
+
+.info {
+  background: silver;
+  height: 10rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Rubik', sans-serif;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+a:hover {
+  color: var(--secondary);
+}
+
+/* ----- Utilities ----- */
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* ----- Navbar ----- */
+nav {
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  position: sticky;
+  top: 0;
+  background: rgba(242, 242, 242, 0.5);
+}
+
+nav h1 {
+  color: var(--secondary);
+  text-transform: uppercase;
+}
+
+nav span {
+  color: var(--primary);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  padding: 0.3rem;
+}
+
+/* ----- Header ----- */
+#header {
+  background: url('img/hero.jpeg') no-repeat center / cover;
+  position: relative;
+}
+
+#header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.hero-content h1 {
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.hero-content button {
+  padding: 0.8rem 2.5rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+}
+
+.hero-content button:hover {
+  background: transparent;
+  transition: background 0.4s;
+  border-color: var(--light);
+  color: var(--light);
+}
+
+/* ----- Footer ----- */
+
+footer {
+  background: var(--light);
+  padding: 1rem;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+
+footer a {
+  padding-left: 0.3rem;
+}
+
+/* ----- Media Queries ----- */
+@media only screen and (min-width: 768px) {
+}
+
+@media only screen and (min-width: 992px) {
+  .container {
+    padding-left: 15%;
+    padding-right: 15%;
+  }
+
+  nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
