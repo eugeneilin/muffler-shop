@@ -167,7 +167,7 @@ nav ul li a:hover {
 
 /* ----- Header ----- */
 #header {
-  background: url('img/hero.jpeg') fixed no-repeat center / cover;
+  background: url('img/hero.jpeg') no-repeat center / cover;
   position: relative;
   display: flex;
   align-items: center;
@@ -266,7 +266,7 @@ nav ul li a:hover {
 
 /* ----- Info: CALL TODAY ----- */
 .info-call {
-  background: url('img/bmw.jpeg') fixed no-repeat center center / cover;
+  background: url('img/bmw.jpeg') no-repeat center center / cover;
   height: 100%;
   width: 100%;
   position: relative;
@@ -348,7 +348,7 @@ nav ul li a:hover {
   display: flex;
   position: relative;
   animation-name: slider;
-  animation-duration: 60s;
+  animation-duration: 30s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -358,7 +358,7 @@ nav ul li a:hover {
     left: 0%;
   }
   to {
-    left: -400%;
+    left: -240%;
   }
 }
 
@@ -369,7 +369,7 @@ nav ul li a:hover {
 }
 
 .info-makes .list-makes img:hover {
-  background-color: var(--light);
+  background-color: rgba(252, 72, 73, 0.1);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -442,6 +442,7 @@ footer a {
   /* Header */
   #header {
     height: 800px;
+    background: url('img/hero.jpeg') fixed no-repeat center / cover;
   }
 
   .hero-content {
@@ -498,6 +499,10 @@ footer a {
   }
 
   /* Info Call */
+  .info-call {
+    background: url('img/bmw.jpeg') fixed no-repeat center center / cover;
+  }
+
   .info-call-text {
     flex-direction: row;
   }
