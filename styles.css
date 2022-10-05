@@ -13,10 +13,10 @@
 /* ----- Variables ----- */
 :root {
   --primary: #fc4849;
-  --secondary: #36404b;
+  --secondary: #562525;
   --light: #f2f2f2;
-  --dark: #333333;
-  --radius: 8px;
+  --light-transparent: rgba(242, 242, 242, 0.9);
+  --dark: #36404b;
 }
 
 /* ----- General ----- */
@@ -32,13 +32,31 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 section {
-  height: 100vh;
-  color: var(--secondary);
+  color: var(--dark);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+.section-subtitle {
+  padding-bottom: 2rem;
+}
+
+.line {
+  background-color: var(--primary);
+  width: 4rem;
+  height: 1px;
+  margin: 1rem auto;
 }
 
 .info {
-  background: silver;
+  background: var(--light);
   height: 10rem;
 }
 
@@ -46,6 +64,7 @@ h1,
 h2,
 h3 {
   font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
 }
 
 ul {
@@ -61,10 +80,18 @@ a:hover {
   color: var(--secondary);
 }
 
-/* ----- Utilities ----- */
-.container {
-  padding-left: 1rem;
-  padding-right: 1rem;
+button {
+  font-size: 1rem;
+  padding: 0.8rem 2.5rem;
+  border: 1px solid transparent;
+  color: var(--dark);
+  background-color: var(--light-transparent);
+}
+
+button:hover {
+  background: transparent;
+  border-color: var(--light);
+  color: var(--light);
 }
 
 /* ----- Navbar ----- */
@@ -74,18 +101,35 @@ nav {
   display: flex;
   flex-direction: column;
   z-index: 10;
-  position: sticky;
+  position: fixed;
   top: 0;
-  background: rgba(242, 242, 242, 0.5);
+  right: 0;
+  left: 0;
+  background: var(--light-transparent);
+  align-items: center;
+}
+
+nav .logo a {
+  display: flex;
+  align-items: center;
+}
+
+nav #logo-img {
+  background: url('img/logo.png') no-repeat center / cover;
+  height: 2.5rem;
+  width: 2.5rem;
+  display: inline-block;
 }
 
 nav h1 {
-  color: var(--secondary);
-  text-transform: uppercase;
+  padding-left: 0.5rem;
+  color: var(--dark);
+  display: inline;
 }
 
 nav span {
   color: var(--primary);
+  padding-left: 0.5rem;
 }
 
 nav ul {
@@ -94,13 +138,24 @@ nav ul {
 }
 
 nav ul li {
-  padding: 0.3rem;
+  padding: 0.5rem;
+}
+
+nav ul li a {
+  padding: 0.5rem 0;
+}
+
+nav ul li a:hover {
+  border-bottom: 1px solid var(--secondary);
 }
 
 /* ----- Header ----- */
 #header {
   background: url('img/hero.jpeg') no-repeat center / cover;
   position: relative;
+  display: flex;
+  align-items: center;
+  height: 700px;
 }
 
 #header::before {
@@ -110,7 +165,7 @@ nav ul li {
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .hero-content {
@@ -119,31 +174,86 @@ nav ul li {
   color: var(--light);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   height: 100%;
+  justify-content: center;
 }
 
-.hero-content h1 {
-  text-transform: uppercase;
-}
-
-.hero-content p {
-  margin: 1rem 0;
+.hero-main {
   text-align: center;
 }
 
-.hero-content button {
-  padding: 0.8rem 2.5rem;
-  border-radius: var(--radius);
-  border: 1px solid transparent;
+.hero-main p {
+  margin: 2rem 0;
 }
 
-.hero-content button:hover {
-  background: transparent;
-  transition: background 0.4s;
-  border-color: var(--light);
+.hero-contact-sm,
+.hero-contact {
+  background: var(--light-transparent);
+  color: var(--dark);
+  padding: 1rem;
+  text-align: center;
+  width: 50%;
+  margin: 0 auto 5rem;
+  border: 1px solid var(--secondary);
+}
+
+.hero-contact-sm p:hover,
+.hero-contact p:hover {
+  color: var(--secondary);
+  cursor: pointer;
+}
+
+.hero-contact {
+  display: none;
+}
+
+/* ----- Services ----- */
+.services-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0.5rem;
+}
+
+.services-cards .card {
+  padding: 1rem;
+}
+
+.services-cards img {
+  height: 4rem;
+  width: 4rem;
+}
+
+.services-cards h3 {
+  padding: 1rem;
+}
+
+/* ----- Info: CALL TODAY ----- */
+.info-call {
+  background: url('img/chevy.jpeg') fixed no-repeat center center / cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.info-call:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.info-call-text {
   color: var(--light);
+  z-index: 10;
+  position: relative;
+  padding: 2rem;
+}
+
+.info-call-text div {
+  padding: 1rem;
 }
 
 /* ----- Footer ----- */
@@ -160,18 +270,61 @@ footer a {
   padding-left: 0.3rem;
 }
 
-/* ----- Media Queries ----- */
+/* --------------- Media Queries --------------- */
+/* ----- MEDIUM Devices ----- */
 @media only screen and (min-width: 768px) {
+  .container {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
 }
 
+/* ----- LARGER Devices ----- */
 @media only screen and (min-width: 992px) {
+  /* General */
   .container {
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
+  /* Navbar */
   nav {
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  /* Header */
+  #header {
+    height: 800px;
+  }
+
+  .hero-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .hero-main {
+    text-align: left;
+  }
+
+  .hero-contact-sm {
+    display: none;
+  }
+
+  .hero-contact {
+    display: block;
+    margin: 0 0 0 1rem;
+    width: 40%;
+    padding: 2rem;
+  }
+
+  .hero-contact h4 {
+    padding-top: 1rem;
+  }
+
+  /* Services */
+  .services-cards {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
