@@ -13,10 +13,10 @@
 /* ----- Variables ----- */
 :root {
   --primary: #fc4849;
-  /* --secondary: #562525; */
   --light: #f2f2f2;
   --light-transparent: rgba(242, 242, 242, 0.9);
-  --dark: #36404b;
+  --dark: #362a2a;
+  --silver: #7e7e7e;
 }
 
 /* ----- General ----- */
@@ -30,7 +30,6 @@ body {
   font-size: 16px;
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
 }
 
 h1,
@@ -65,19 +64,6 @@ button {
 button:hover {
   background: transparent;
   border-color: var(--primary);
-  color: var(--primary);
-}
-
-i {
-  font-size: 4.5rem;
-  color: rgba(0, 0, 0, 0.4);
-  margin: 1.5rem;
-  height: 100%;
-  width: 100%;
-  line-height: 1.6 !important;
-}
-
-i:hover {
   color: var(--primary);
 }
 
@@ -241,20 +227,19 @@ nav ul li a:hover {
 .services-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5rem;
 }
 
 .services-cards .card {
-  padding: 1rem;
+  padding: 1.5rem 0.5rem;
 }
 
 .services-cards img {
-  height: 4rem;
-  width: 4rem;
+  height: 3.5rem;
+  width: 3.5rem;
 }
 
 .services-cards h3 {
-  padding: 1rem;
+  padding: 0.5rem 0;
 }
 
 /* ----- About ----- */
@@ -354,7 +339,7 @@ nav ul li a:hover {
 
 /* ----- Info: MAKES ----- */
 .info-makes {
-  padding: 1rem;
+  padding: 4rem;
   position: relative;
   overflow: hidden;
 }
@@ -363,7 +348,7 @@ nav ul li a:hover {
   display: flex;
   position: relative;
   animation-name: slider;
-  animation-duration: 70s;
+  animation-duration: 60s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -373,8 +358,18 @@ nav ul li a:hover {
     left: 0%;
   }
   to {
-    left: -200%;
+    left: -400%;
   }
+}
+
+.info-makes .list-makes img {
+  padding: 1.5rem;
+  height: 4rem;
+  width: 4rem;
+}
+
+.info-makes .list-makes img:hover {
+  background-color: var(--light);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -388,13 +383,33 @@ nav ul li a:hover {
   scrollbar-width: none; /* Firefox */
 }
 
+/* ----- Contact ----- */
+#contact .contact-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-info {
+  width: 100%;
+}
+
+.contact-info p {
+  padding: 1rem;
+}
+
+.contact-map {
+  width: 100%;
+  height: 20rem;
+}
+
 /* ----- Footer ----- */
 footer {
   background: var(--light);
   padding: 1rem;
   justify-content: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  text-align: center;
 }
 
 footer a {
@@ -495,5 +510,16 @@ footer a {
   .info-call-2 {
     padding: 1rem;
     margin: auto 0;
+  }
+
+  /* Contact */
+  #contact .contact-content {
+    flex-direction: row;
+  }
+
+  /* Footer */
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
   }
 }
