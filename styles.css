@@ -348,7 +348,7 @@ nav ul li a:hover {
   display: flex;
   position: relative;
   animation-name: slider;
-  animation-duration: 30s;
+  animation-duration: 20s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
@@ -358,7 +358,7 @@ nav ul li a:hover {
     left: 0%;
   }
   to {
-    left: -240%;
+    left: -1100%;
   }
 }
 
@@ -512,9 +512,27 @@ footer a {
     padding: 1rem;
   }
 
+  .info-call-1 p {
+    color: var(--light) !important;
+  }
+
   .info-call-2 {
     padding: 1rem;
     margin: auto 0;
+  }
+
+  /* Info: Makes */
+  .info-makes .list-makes {
+    animation-duration: 35s;
+  }
+
+  @keyframes slider {
+    from {
+      left: 0%;
+    }
+    to {
+      left: -240%;
+    }
   }
 
   /* Contact */
